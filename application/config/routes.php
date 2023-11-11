@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $route['default_controller'] = 'UserController/index';
-$route['Dashboard']          = 'AdminController/dashboard';
+$route['dashboard']          = 'AdminController/dashboard';
+$route['navbar/list']		 = 'AdminController/navbar_list';
+
+
+
+
+
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

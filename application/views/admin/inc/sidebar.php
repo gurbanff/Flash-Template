@@ -74,7 +74,7 @@
                       >
                         <!-- Start::slide__category -->
                         <li class="slide__category">
-                          <span class="category-name">Main</span>
+                          <span class="category-name">Pages</span>
                         </li>
                         <!-- End::slide__category -->
 
@@ -82,15 +82,13 @@
                         <li class="slide has-sub">
                           <a href="javascript:void(0);" class="side-menu__item">
                             <i class="bx bx-home side-menu__icon"></i>
-                            <span class="side-menu__label"
-                              >Dashboards<span
-                                class="badge bg-warning-transparent ms-2"
-                                >12</span
-                              ></span
-                            >
+                            <span class="side-menu__label">
+								Navbar
+							</span>
                             <i class="fe fe-chevron-right side-menu__angle"></i>
                           </a>
                           <ul
+
                             class="slide-menu child1"
                             style="
                               position: relative;
@@ -102,13 +100,26 @@
                             data-popper-placement="bottom"
                           >
                             <li class="slide side-menu__label1">
-                              <a href="javascript:void(0)">Dashboards</a>
+                              <a href="javascript:void(0)">Navbar</a>
                             </li>
+
                             <li class="slide">
-                              <a href="index.html" class="side-menu__item"
-                                >CRM</a
-                              >
+                              <a href="<?php echo base_url('navbar/list'); ?>" class="side-menu__item">
+								  List
+							  </a>
                             </li>
+
+							  <li class="slide">
+								  <a href="<?php echo base_url('navbar/list'); ?>" class="side-menu__item">
+									  Create
+								  </a>
+							  </li>
+
+							  <li class="slide">
+								  <a href="<?php echo base_url('navbar/list'); ?>" class="side-menu__item">
+									  Update
+								  </a>
+							  </li>
 
                           </ul>
                         </li>

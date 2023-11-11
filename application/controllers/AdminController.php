@@ -9,4 +9,9 @@ class AdminController extends CI_Controller {
         $this->load->view("admin/index");
     }
 
+	public function navbar_list()
+	{
+		$this->load->view("admin/navbar/list");
+	}
+
 }
