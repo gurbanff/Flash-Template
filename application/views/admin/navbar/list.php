@@ -36,33 +36,13 @@
 			<div class="col-xl-12">
 				<div class="card custom-card">
 					<div class="card-header justify-content-between">
-						<div class="card-title"> Recent Employers </div>
+						<div class="card-title"> List Table </div>
 						<div class="d-flex">
-							<div class="me-3">
-								<input class="form-control form-control-sm" type="text" placeholder="Search Here" aria-label=".form-control-sm example">
-							</div>
 							<div class="dropdown">
-								<a href="javascript:void(0);" class="btn btn-primary btn-sm btn-wave waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false">
-									Sort By
-									<i class="ri-arrow-down-s-line align-middle ms-1 d-inline-block"></i>
+								<a href="<?php echo base_url('navbar_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+									<i class="ti ti-arrow-big-right"></i>
+									Create
 								</a>
-								<ul class="dropdown-menu" role="menu">
-									<li>
-										<a class="dropdown-item" href="javascript:void(0);">
-											New
-										</a>
-									</li>
-									<li>
-										<a class="dropdown-item" href="javascript:void(0);">
-											Popular
-										</a>
-									</li>
-									<li>
-										<a class="dropdown-item" href="javascript:void(0);">
-											Relevant
-										</a>
-									</li>
-								</ul>
 							</div>
 						</div>
 					</div>

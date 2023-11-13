@@ -27,4 +27,25 @@ class AdminController extends CI_Controller {
 		$this->load->view("admin/navbar/create");
 	}
 
+	public function navbar_create_act()
+	{
+		$name = $_POST['name'];
+
+		if (!empty($name)) {
+
+			$data = [
+				"name" => $name,
+			];
+
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->nav_ins($data);
+			redirect(base_url("navbar/list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+
+	}
+
 }

@@ -38,25 +38,38 @@
 				<div class="card custom-card">
 					<div class="card-header justify-content-between">
 						<div class="card-title">Create table</div>
+						<div class="d-flex">
+							<div class="dropdown">
+								<a href="<?php echo base_url('navbar/list'); ?>"
+								   class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+									<i class="ti ti-arrow-big-left"></i>
+									Back
+								</a>
+							</div>
+						</div>
 					</div>
+					<form action="<?php echo base_url('navbar_create_act'); ?>" method="post" enctype="application/x-www-form-urlencoded">
+						<div class="card-body">
+							<div class="row mb-3">
+								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="name" id="name" placeholder="Home">
+								</div>
+							</div>
+							<!--<div class="row">
+								<label for="colFormLabelLg" class="col-sm-2 col-form-label">Link</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="href" id="href" placeholder="home">
+								</div>
+							</div>-->
+						</div>
 
-					<div class="card-body">
-						<input class="form-control mb-3"
-							   type="text"
-							   aria-label=".form-control-sm example">
-						<input class="form-control mb-3"
-							   type="text"
-							   aria-label="default input example">
-						<input class="form-control"
-							   type="text"
-							   aria-label=".form-control-lg example">
-					</div>
-
-					<div class="card-footer">
-						<button class="btn btn-primary-light btn-wave ms-auto float-end waves-effect waves-light">
-							Create
-						</button>
-					</div>
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary-light btn-wave ms-auto float-end waves-effect waves-light">
+								Create
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
