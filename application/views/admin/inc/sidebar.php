@@ -110,14 +110,14 @@
                             </li>
 
 							  <li class="slide">
-								  <a href="<?php echo base_url('navbar/list'); ?>" class="side-menu__item">
+								  <a href="<?php echo base_url('navbar_create'); ?>" class="side-menu__item">
 									  Create
 								  </a>
 							  </li>
 
 							  <li class="slide">
-								  <a href="<?php echo base_url('navbar/list'); ?>" class="side-menu__item">
-									  Update
+								  <a href="<?php echo base_url('navbar_logo_create'); ?>" class="side-menu__item">
+									  Logo Create
 								  </a>
 							  </li>
 

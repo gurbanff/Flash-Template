@@ -1,8 +1,12 @@
 <?php $this->load->view("admin/inc/body"); ?>
 
+<!-- app-header -->
 <?php $this->load->view("admin/inc/app-header"); ?>
+<!-- /app-header -->
 
+<!-- Start::app-sidebar -->
 <?php $this->load->view("admin/inc/sidebar"); ?>
+<!-- End::app-sidebar -->
 
 <?php $this->load->view("admin/inc/search"); ?>
 
@@ -11,7 +15,7 @@
 		<!-- Page Header -->
 		<div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
 			<h1 class="page-title fw-semibold fs-18 mb-0">
-				Navbar Update
+				Navbar Create
 			</h1>
 			<div class="ms-md-1 ms-0">
 				<nav>
@@ -22,7 +26,7 @@
 							</a>
 						</li>
 						<li class="breadcrumb-item active" aria-current="page">
-							Update
+							Create
 						</li>
 					</ol>
 				</nav>
@@ -33,30 +37,27 @@
 			<div class="col-xl-6">
 				<div class="card custom-card">
 					<div class="card-header justify-content-between">
-						<div class="card-title">Update table</div>
-						<div class="d-flex">
-							<div class="dropdown">
-								<a href="<?php echo base_url('navbar/list'); ?>"
-								   class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
-									<i class="ti ti-arrow-big-left"></i>
-									Back
-								</a>
-							</div>
-						</div>
+						<div class="card-title">Create table</div>
 					</div>
-					<form action="<?php echo base_url('navbar_update_act/'.$nav_all_data['id']); ?>" method="post" enctype="multipart/form-data">
+					<form action="<?php echo base_url('navbar_create_act'); ?>" method="post"
+						  enctype="application/x-www-form-urlencoded">
 						<div class="card-body">
 							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+								<label for="colFormLabel" class="col-sm-2 col-form-label">Link</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="name" id="name" value="<?php echo $nav_all_data['name']; ?>" placeholder="Home">
+									<input type="text" class="form-control" name="file_href" id="name" placeholder="Logo Link">
 								</div>
+							</div>
+							<div>
+								<label for="formFileLg" class="form-label">File Upload</label>
+								<input class="form-control form-control-lg" id="formFileLg" name="file" type="file">
 							</div>
 						</div>
 
 						<div class="card-footer">
-							<button type="submit" class="btn btn-primary-light btn-wave ms-auto float-end waves-effect waves-light">
-								Update
+							<button type="submit"
+									class="btn btn-primary-light btn-wave ms-auto float-end waves-effect waves-light">
+								Create
 							</button>
 						</div>
 					</form>
