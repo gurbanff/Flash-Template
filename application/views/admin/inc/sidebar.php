@@ -81,7 +81,6 @@
                         <!-- Start::slide -->
                         <li class="slide has-sub">
                           <a href="javascript:void(0);" class="side-menu__item">
-                            <i class="bx bx-home side-menu__icon"></i>
                             <span class="side-menu__label">
 								Navbar
 							</span>
@@ -120,9 +119,46 @@
 									  Logo Create
 								  </a>
 							  </li>
-
                           </ul>
                         </li>
+
+						  <li class="slide has-sub">
+							  <a href="javascript:void(0);" class="side-menu__item">
+								  <span class="side-menu__label">
+								Header
+							</span>
+								  <i class="fe fe-chevron-right side-menu__angle"></i>
+							  </a>
+							  <ul
+
+								  class="slide-menu child1"
+								  style="
+                              position: relative;
+                              left: 0px;
+                              top: 0px;
+                              margin: 0px;
+                              transform: translate(120px, 148px);
+                            "
+								  data-popper-placement="bottom"
+							  >
+								  <li class="slide side-menu__label1">
+									  <a href="javascript:void(0)">Header</a>
+								  </li>
+
+								  <li class="slide">
+									  <a href="<?php echo base_url('header_list'); ?>" class="side-menu__item">
+										  List
+									  </a>
+								  </li>
+
+								  <li class="slide">
+									  <a href="<?php echo base_url('#'); ?>" class="side-menu__item">
+										  Create
+									  </a>
+								  </li>
+
+							  </ul>
+						  </li>
                         <!-- End::slide -->
                       </ul>
 

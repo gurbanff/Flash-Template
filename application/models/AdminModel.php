@@ -4,18 +4,6 @@
 
 class AdminModel extends CI_Model {
 
-	public function xl_return_rows($navbar, $id)
-	{
-		$navbar_logo_rows_count = $this->db->from($navbar)->count_all_results();
-		if ($navbar_logo_rows_count == 1) {
-			return $this->db->get($navbar)->row_array()[$id];
-		} else if ($navbar_logo_rows_count > 1) {
-			return $this->db->order_by($id, "DESC")->limit(1)->get($navbar)->row_array()[$id];
-		} else {
-			return -1;
-		}
-	}
-
 	public function nav_ins($data)
 	{
 		$this->db->insert("navbar", $data);
@@ -46,6 +34,39 @@ class AdminModel extends CI_Model {
 		$this->db->insert('navbar_logo', $data);
 	}
 
+	public function get_logo_data($id)
+	{
+		return $this->db->where('id', $id)->get('navbar_logo')->row_array();
+	}
 
+	public function nav_logo_upt($id, $data)
+	{
+		$this->db->where('id', $id)->update('navbar_logo', $data);
+	}
+
+	public function get_logo_img()
+	{
+		return $this->db->limit(1)->get('navbar_logo')->result_array();
+	}
+
+	public function nav_logo_del($id)
+	{
+		$this->db->where("id", $id)->delete('navbar_logo');
+	}
+
+	public function get_all_header()
+	{
+		return $this->db->get("header")->result_array();
+	}
+
+	public function header_cre($data)
+	{
+		$this->db->insert("header", $data);
+	}
+
+	public function header_all_data($id)
+	{
+		return $this->db->where('id', $id)->get('header')->row_array();
+	}
 
 }

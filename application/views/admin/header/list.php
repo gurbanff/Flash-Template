@@ -11,7 +11,7 @@
 		<!-- Page Header -->
 		<div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
 			<h1 class="page-title fw-semibold fs-18 mb-0">
-				Navbar List
+				Header List
 			</h1>
 			<div class="ms-md-1 ms-0">
 				<nav>
@@ -35,7 +35,7 @@
 						<div class="card-title">List Table</div>
 						<div class="d-flex">
 							<div class="dropdown">
-								<a href="<?php echo base_url('navbar_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+								<a href="<?php echo base_url('header_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
 									<i class="ti ti-arrow-big-right"></i>
 									Create
 								</a>
@@ -48,7 +48,7 @@
 								<thead>
 								<tr>
 									<th scope="col">
-										Navbar Name
+										Header Name
 									</th>
 									<th scope="col">
 										Action
@@ -57,9 +57,9 @@
 
 								</thead>
 								<tbody>
-								<?php $say = 0;
-								foreach ($get_all_nav as $item) {
-									$say++ ?>
+
+								<?php $say = 0; foreach($get_all_header as $item){ $say++ ?>
+
 									<tr>
 										<td>
 											<div class="d-flex align-items-center fw-semibold">
@@ -68,20 +68,38 @@
 										</td>
 										<td>
 											<div class="btn-list">
-												<a href="<?php echo base_url('navbar_update/' . $item['id']); ?>">
+													<button type="submit"
+															class="btn btn-icon btn-sm btn-primary-light btn-wave waves-effect waves-light">
+														<i class="ri-eye-line"></i>
+													</button>
+												<a href="<?php echo base_url('header_update/' . $item['id']); ?>">
 													<button class="btn btn-sm btn-info-light btn-icon">
 														<i class="ri-pencil-line"></i>
 													</button>
 												</a>
-												<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('navbar_delete/' . $item['id']); ?>" style="text-decoration: none;">
+												<!--<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php /*echo base_url('navbar_delete/' . $item['id']); */?>" style="text-decoration: none;">-->
 													<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
 														<i class="ri-delete-bin-line"></i>
 													</button>
-												</a>
+												<!--</a>-->
 											</div>
 										</td>
 									</tr>
-								<?php } ?>
+									<tr>
+										<td>
+											<div class="d-flex align-items-center fw-semibold">
+												<?php echo $item['desc']; ?>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div class="d-flex align-items-center fw-semibold">
+												<?php echo $item['desc2']; ?>
+											</div>
+										</td>
+									</tr>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>
@@ -107,7 +125,7 @@
 								<thead>
 								<tr>
 									<th scope="col">
-										Navbar Logo
+										Header Logo
 									</th>
 									<th scope="col">
 										Action
@@ -116,31 +134,31 @@
 
 								</thead>
 								<tbody>
-								<?php $say = 0;
-								foreach ($get_logo_data as $item) {
-									$say++ ?>
+
+								<!--Foreach-->
+
 									<tr>
 										<td>
 											<div class="d-flex align-items-center fw-semibold">
-												<?php echo $item['file']; ?>
+
 											</div>
 										</td>
 										<td>
 											<div class="btn-list">
-												<a href="<?php echo base_url('navbar_logo_update/' . $item['id']); ?>">
+												<!--<a href="<?php /*echo base_url('#/' . $item['id']); */?>">-->
 													<button class="btn btn-sm btn-info-light btn-icon">
 														<i class="ri-pencil-line"></i>
 													</button>
-												</a>
-												<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('navbar_logo_delete/' . $item['id']); ?>" style="text-decoration: none;">
+												<!--</a>-->
+												<!--<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php /*echo base_url('#/' . $item['id']); */?>" style="text-decoration: none;">-->
 													<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
 														<i class="ri-delete-bin-line"></i>
 													</button>
-												</a>
+												<!--</a>-->
 											</div>
 										</td>
 									</tr>
-								<?php } ?>
+								<!--end-->
 								</tbody>
 							</table>
 						</div>

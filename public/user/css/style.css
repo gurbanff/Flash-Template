@@ -239,7 +239,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("../img/content/header/bg-warehouse.jpg");
+    background-image: url("public/user/img/content/header/bg-warehouse.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

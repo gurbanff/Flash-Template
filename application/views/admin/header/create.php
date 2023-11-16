@@ -1,21 +1,17 @@
 <?php $this->load->view("admin/inc/body"); ?>
 
-<!-- app-header -->
 <?php $this->load->view("admin/inc/app-header"); ?>
-<!-- /app-header -->
 
-<!-- Start::app-sidebar -->
 <?php $this->load->view("admin/inc/sidebar"); ?>
-<!-- End::app-sidebar -->
 
 <?php $this->load->view("admin/inc/search"); ?>
 
 <div class="main-content app-content">
 	<div class="container-fluid">
-		<!-- Page Header -->
+
 		<div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
 			<h1 class="page-title fw-semibold fs-18 mb-0">
-				Navbar Logo Create
+				Header Create
 			</h1>
 			<div class="ms-md-1 ms-0">
 				<nav>
@@ -38,14 +34,45 @@
 				<div class="card custom-card">
 					<div class="card-header justify-content-between">
 						<div class="card-title">Create table</div>
+						<div class="d-flex">
+							<div class="dropdown">
+								<a href="<?php echo base_url('navbar/list'); ?>"
+								   class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+									<i class="ti ti-arrow-big-left"></i>
+									Back
+								</a>
+							</div>
+						</div>
 					</div>
-					<form action="<?php echo base_url('nav_logo_create_act'); ?>" method="post"
+					<form action="<?php echo base_url('header_create_act'); ?>" method="post"
 						  enctype="multipart/form-data">
 						<div class="card-body">
+							<div class="row mb-3">
+								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="name" id="colFormLabel" placeholder="Header Başlıq...">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label for="colFormLabel" class="col-sm-2 col-form-label">Description 1</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="desc" id="colFormLabel" placeholder="Description Başlıq 1 ...">
+								</div>
+							</div>
+
+							<div class="row mb-3">
+								<label for="colFormLabel" class="col-sm-2 col-form-label">Description 2</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="desc2" id="colFormLabel" placeholder="Description Başlıq 2 ...">
+								</div>
+							</div>
+
 							<div>
 								<label for="formFileLg" class="form-label">File Upload</label>
 								<input class="form-control form-control-lg" id="formFileLg" name="file" type="file">
 							</div>
+
 						</div>
 
 						<div class="card-footer">

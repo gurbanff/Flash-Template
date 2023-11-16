@@ -3,17 +3,27 @@
 	<div class="h-navbar dflex-column justify-content-center align-items-center">
 		<div class="wrapper wrapper-h-navbar dflex-row justify-content-between align-items-center">
 			<div class="h-n-logo dflex-column justify-content-center align-items-center animate__animated animate__fadeInLeft">
-				<a href="#Home">
-					<img src="<?php echo $directory ?>img/logo/flash.png" alt="Flash Logo">
-				</a>
+				<?php foreach ($navbar_logo as $logo) { ?>
+					<a href="#Home">
+						<img src="<?php echo base_url('uploads/admin/navbar/') . $logo['file'] ?>"
+							 alt="Flash Logo"
+							 width="112"
+							 height="55"
+						>
+					</a>
+				<?php } ?>
 			</div>
 			<div class="h-n-menu dflex-row justify-content-center align-items-center animate__animated animate__fadeInRight">
 				<ul class="dflex-row justify-content-center align-items-center">
-					<li><a data-lang="navbar_menu_home" href="#Home">Home</a></li>
-					<li><a data-lang="navbar_menu_aboutus" href="#AboutUs">About us</a></li>
+					<li>
+						<?php foreach($navbar_all as $item) { ?>
+							<a href="#<?php echo $item['name']; ?>"><?php echo $item['name']; ?></a>
+						<?php } ?>
+					</li>
+					<!--<li><a data-lang="navbar_menu_aboutus" href="#AboutUs">About us</a></li>
 					<li><a data-lang="navbar_menu_service" href="#Service">Service</a></li>
 					<li><a data-lang="navbar_menu_gallery" href="#Gallery">Gallery</a></li>
-					<li><a data-lang="navbar_menu_contact" href="#Contact">Contact</a></li>
+					<li><a data-lang="navbar_menu_contact" href="#Contact">Contact</a></li>-->
 				</ul>
 				<div class="lang-switcher dflex-column justify-content-start align-items-start">
 					<div class="selected-lang dflex-row justify-content-center align-items-center">

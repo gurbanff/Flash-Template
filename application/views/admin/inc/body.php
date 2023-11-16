@@ -69,7 +69,6 @@
     <style type="text/css" media="print">
       <!-- body{display:none} -->
     </style>
-    <!--[if gte IE 5]><frame></frame><![endif]-->
     <style id="apexcharts-css">
       @keyframes opaque {
         0% {
