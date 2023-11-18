@@ -55,30 +55,18 @@
 							</div>
 
 							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Description 1</label>
+								<label for="input1" class="col-sm-2 col-form-label">Input 1</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc" value="<?php echo $header_all_data['desc']; ?>" id="colFormLabel" placeholder="Description Başlıq 1 ...">
+									<input type="text" class="form-control" name="desc" value="<?php echo $header_all_data['desc']; ?>" id="input1" placeholder="Description Başlıq 1 ...">
 								</div>
 							</div>
 
 							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Description 2</label>
+								<label for="input2" class="col-sm-2 col-form-label">Input 2</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc2" value="<?php echo $header_all_data['desc2'] ?>" id="colFormLabel" placeholder="Description Başlıq 2 ...">
+									<input type="text" class="form-control" name="desc2" value="<?php echo $header_all_data['desc2'] ?>" id="input2" placeholder="Description Başlıq 2 ...">
 								</div>
 							</div>
-
-							<div>
-								<label for="formFileLg" class="form-label">File Upload</label>
-								<input class="form-control form-control-lg" id="formFileLg" name="file" type="file">
-							</div>
-
-							<div class="card-body">
-								<img src="<?php echo base_url('uploads/admin/header/') . $header_all_data['img']; ?>" class="card-img mb-3" alt="..." />
-								<h6 class="card-title fw-semibold mb-3">Mountains<span class="badge bg-primary float-end fs-10">New</span></h6>
-								<p class="card-text">With supporting text below as a natural lead-in.</p>
-							</div>
-
 						</div>
 
 						<div class="card-footer">

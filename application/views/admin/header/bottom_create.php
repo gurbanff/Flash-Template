@@ -44,27 +44,27 @@
 							</div>
 						</div>
 					</div>
-					<form action="<?php echo base_url('header_create_act'); ?>" method="post"
+					<form action="<?php echo base_url('header_bottom_create_act'); ?>" method="post"
 						  enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+								<label for="name" class="col-sm-2 col-form-label">Name</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="name" id="colFormLabel" placeholder="Header Başlıq...">
+									<input type="text" class="form-control" name="name" id="name" placeholder="Name Başlıq...">
 								</div>
 							</div>
 
 							<div class="row mb-3">
-								<label for="input1" class="col-sm-2 col-form-label">Input 1</label>
+								<label for="input1" class="col-sm-2 col-form-label">Span</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc" id="input1" placeholder="Input Başlıq 1 ...">
+									<input type="text" class="form-control" name="span" id="input1" placeholder="Span Başlıq 1 ...">
 								</div>
 							</div>
 
 							<div class="row mb-3">
-								<label for="input2" class="col-sm-2 col-form-label">Input 2</label>
+								<label for="input2" class="col-sm-2 col-form-label">Span 2</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc2" id="input2" placeholder="Input Başlıq 2 ...">
+									<input type="text" class="form-control" name="span2" id="input2" placeholder="Span Başlıq 2 ...">
 								</div>
 							</div>
 						</div>

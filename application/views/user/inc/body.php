@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="<?php echo $directory ?>css/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="<?php echo $directory ?>css/wow-animate.css">
 	<script defer src="<?php echo $directory ?>js/wow-animate.js"></script>
-	<script defer src="<?php echo $directory ?>js/typing-module.js"></script>
-	<script defer src="<?php echo $directory ?>js/lang-module.js"></script>
+	<script defer src="<?php echo $directory ?>js/typing-module.html"></script>
+	<script defer src="<?php echo $directory ?>js/lang-module.html"></script>
 	<script defer src="<?php echo $directory ?>js/script.js"></script>
 	<link rel="stylesheet" href="<?php echo $directory ?>css/style.css">
 </head>

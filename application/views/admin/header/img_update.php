@@ -11,7 +11,7 @@
 
 		<div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
 			<h1 class="page-title fw-semibold fs-18 mb-0">
-				Header Create
+				Header Update
 			</h1>
 			<div class="ms-md-1 ms-0">
 				<nav>
@@ -22,7 +22,7 @@
 							</a>
 						</li>
 						<li class="breadcrumb-item active" aria-current="page">
-							Create
+							Update
 						</li>
 					</ol>
 				</nav>
@@ -33,7 +33,7 @@
 			<div class="col-xl-6">
 				<div class="card custom-card">
 					<div class="card-header justify-content-between">
-						<div class="card-title">Create table</div>
+						<div class="card-title">Update table</div>
 						<div class="d-flex">
 							<div class="dropdown">
 								<a href="<?php echo base_url('header_list'); ?>"
@@ -44,35 +44,19 @@
 							</div>
 						</div>
 					</div>
-					<form action="<?php echo base_url('header_create_act'); ?>" method="post"
+					<form action="<?php echo base_url('header_img_update_act/'.$get_head_img['id']); ?>" method="post"
 						  enctype="multipart/form-data">
 						<div class="card-body">
-							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="name" id="colFormLabel" placeholder="Header Başlıq...">
-								</div>
-							</div>
-
-							<div class="row mb-3">
-								<label for="input1" class="col-sm-2 col-form-label">Input 1</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc" id="input1" placeholder="Input Başlıq 1 ...">
-								</div>
-							</div>
-
-							<div class="row mb-3">
-								<label for="input2" class="col-sm-2 col-form-label">Input 2</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc2" id="input2" placeholder="Input Başlıq 2 ...">
-								</div>
+							<div>
+								<label for="formFileLg" class="form-label">File Upload</label>
+								<input class="form-control form-control-lg" id="formFileLg" name="file" type="file">
 							</div>
 						</div>
 
 						<div class="card-footer">
 							<button type="submit"
-									class="btn btn-primary-light btn-wave ms-auto float-end waves-effect waves-light">
-								Create
+									class="btn btn-success-light btn-wave ms-auto float-end waves-effect waves-light">
+								Update
 							</button>
 						</div>
 					</form>

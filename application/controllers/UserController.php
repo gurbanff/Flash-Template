@@ -14,6 +14,10 @@ class UserController extends CI_Controller {
     {
 		$data['navbar_all']		= $this->UserModel->navbar_all_data();
 		$data['navbar_logo']	= $this->UserModel->navbar_logo_data();
+		// Header
+		$data['header']	= $this->UserModel->header_data();
+		$data['header_bottom_data']	= $this->UserModel->header_bottom_data();
+		$data['header_bottomR_data']	= $this->UserModel->header_bottomR_data();
 
         $this->load->view("user/index", $data);
     }

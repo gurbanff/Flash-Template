@@ -1,17 +1,21 @@
 <?php $this->load->view("admin/inc/body"); ?>
 
+<!-- app-header -->
 <?php $this->load->view("admin/inc/app-header"); ?>
+<!-- /app-header -->
 
+<!-- Start::app-sidebar -->
 <?php $this->load->view("admin/inc/sidebar"); ?>
+<!-- End::app-sidebar -->
 
 <?php $this->load->view("admin/inc/search"); ?>
 
 <div class="main-content app-content">
 	<div class="container-fluid">
-
+		<!-- Page Header -->
 		<div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
 			<h1 class="page-title fw-semibold fs-18 mb-0">
-				Header Create
+				Navbar Logo Create
 			</h1>
 			<div class="ms-md-1 ms-0">
 				<nav>
@@ -44,28 +48,12 @@
 							</div>
 						</div>
 					</div>
-					<form action="<?php echo base_url('header_create_act'); ?>" method="post"
+					<form action="<?php echo base_url('header_img_create_act'); ?>" method="post"
 						  enctype="multipart/form-data">
 						<div class="card-body">
-							<div class="row mb-3">
-								<label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="name" id="colFormLabel" placeholder="Header Başlıq...">
-								</div>
-							</div>
-
-							<div class="row mb-3">
-								<label for="input1" class="col-sm-2 col-form-label">Input 1</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc" id="input1" placeholder="Input Başlıq 1 ...">
-								</div>
-							</div>
-
-							<div class="row mb-3">
-								<label for="input2" class="col-sm-2 col-form-label">Input 2</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="desc2" id="input2" placeholder="Input Başlıq 2 ...">
-								</div>
+							<div>
+								<label for="file" class="form-label">File Upload</label>
+								<input class="form-control form-control-lg" id="file" name="file" type="file">
 							</div>
 						</div>
 

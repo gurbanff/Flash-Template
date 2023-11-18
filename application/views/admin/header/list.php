@@ -68,20 +68,22 @@
 										</td>
 										<td>
 											<div class="btn-list">
+												<a href="<?php echo base_url('header_view/'.$item['id']); ?>">
 													<button type="submit"
 															class="btn btn-icon btn-sm btn-primary-light btn-wave waves-effect waves-light">
 														<i class="ri-eye-line"></i>
 													</button>
+												</a>
 												<a href="<?php echo base_url('header_update/' . $item['id']); ?>">
 													<button class="btn btn-sm btn-info-light btn-icon">
 														<i class="ri-pencil-line"></i>
 													</button>
 												</a>
-												<!--<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php /*echo base_url('navbar_delete/' . $item['id']); */?>" style="text-decoration: none;">-->
+												<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('header_delete/'.$item['id']); ?>" style="text-decoration: none;">
 													<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
 														<i class="ri-delete-bin-line"></i>
 													</button>
-												<!--</a>-->
+												</a>
 											</div>
 										</td>
 									</tr>
@@ -112,7 +114,7 @@
 						<div class="card-title"> List Table</div>
 						<div class="d-flex">
 							<div class="dropdown">
-								<a href="<?php echo base_url('navbar_logo_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+								<a href="<?php echo base_url('header_img_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
 									<i class="ti ti-arrow-big-right"></i>
 									Create
 								</a>
@@ -125,7 +127,10 @@
 								<thead>
 								<tr>
 									<th scope="col">
-										Header Logo
+										Header Image
+									</th>
+									<th scope="col">
+										Image name
 									</th>
 									<th scope="col">
 										Action
@@ -135,30 +140,186 @@
 								</thead>
 								<tbody>
 
-								<!--Foreach-->
+								<?php foreach ($get_head_img as $item) { ?>
 
 									<tr>
 										<td>
 											<div class="d-flex align-items-center fw-semibold">
-
+												<?php if($item['img']){ ?>
+													<img width="50px" height="50px" style="object-fit: cover;" src="<?php echo base_url('uploads/admin/header/'.$item['img']) ?>" />
+												<?php }else{ ?>
+													<img width="50px" height="50px" style="object-fit: cover;" src="<?php echo base_url('uploads/noimage.jpg'); ?>" />
+												<?php } ?>
 											</div>
 										</td>
+
+										<td>
+											<div class="d-flex align-items-center fw-semibold">
+												<?php echo substr($item['img'],0,20)."..."; ?>
+											</div>
+										</td>
+
 										<td>
 											<div class="btn-list">
-												<!--<a href="<?php /*echo base_url('#/' . $item['id']); */?>">-->
+												<a href="<?php echo base_url('header_img_update/' . $item['id']); ?>">
 													<button class="btn btn-sm btn-info-light btn-icon">
 														<i class="ri-pencil-line"></i>
 													</button>
-												<!--</a>-->
-												<!--<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php /*echo base_url('#/' . $item['id']); */?>" style="text-decoration: none;">-->
+												</a>
+												<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('header_img_delete/' . $item['id']); ?>" style="text-decoration: none;">
 													<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
 														<i class="ri-delete-bin-line"></i>
 													</button>
-												<!--</a>-->
+												</a>
 											</div>
 										</td>
 									</tr>
-								<!--end-->
+								<?php } ?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xl-3">
+				<div class="card custom-card">
+					<div class="card-header justify-content-between">
+						<div class="card-title">Header Bottom List</div>
+						<div class="d-flex">
+							<div class="dropdown">
+								<a href="<?php echo base_url('header_bottom_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+									<i class="ti ti-arrow-big-right"></i>
+									Create
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table text-nowrap table-hover border table-bordered">
+								<thead>
+								<tr>
+									<th scope="col">
+										Header Image
+									</th>
+									<th scope="col">
+										Action
+									</th>
+								</tr>
+
+								</thead>
+								<tbody>
+								<?php foreach ($get_all_header_bottom as $item) { ?>
+									<tr>
+										<td>
+											<div class="d-flex align-items-center fw-semibold">
+												<?php echo $item['name']; ?>
+											</div>
+										</td>
+
+										<td>
+											<div class="btn-list">
+												<a href="<?php echo base_url('header_bottom_update/' . $item['id']); ?>">
+													<button class="btn btn-sm btn-info-light btn-icon">
+														<i class="ri-pencil-line"></i>
+													</button>
+												</a>
+												<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('header_bottom_delete/' . $item['id']); ?>" style="text-decoration: none;">
+													<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
+														<i class="ri-delete-bin-line"></i>
+													</button>
+												</a>
+											</div>
+										</td>
+									</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center fw-semibold">
+											<?php echo $item['span']; ?>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center fw-semibold">
+											<?php echo $item['span2']; ?>
+										</div>
+									</td>
+								</tr>
+								<?php } ?>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xl-3">
+				<div class="card custom-card">
+					<div class="card-header justify-content-between">
+						<div class="card-title"> List Table</div>
+						<div class="d-flex">
+							<div class="dropdown">
+								<a href="<?php echo base_url('header_bottomR_create'); ?>" class="btn btn-primary btn-sm btn-wave waves-effect waves-light">
+									<i class="ti ti-arrow-big-right"></i>
+									Create
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table text-nowrap table-hover border table-bordered">
+								<thead>
+								<tr>
+									<th scope="col">
+										Header Name
+									</th>
+									<th scope="col">
+										Action
+									</th>
+								</tr>
+
+								</thead>
+								<tbody>
+								<?php foreach ($get_all_header_bottomR as $item) { ?>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center fw-semibold">
+											<?php echo $item['name']; ?>
+										</div>
+									</td>
+									<td>
+										<div class="btn-list">
+											<a href="<?php echo base_url('header_bottomR_update/' . $item['id']); ?>">
+												<button class="btn btn-sm btn-info-light btn-icon">
+													<i class="ri-pencil-line"></i>
+												</button>
+											</a>
+											<a onclick="return confirm('Silmek istediyinize Eminsiz?')" href="<?php echo base_url('header_bottomR_delete/' . $item['id']); ?>" style="text-decoration: none;">
+												<button type="submit" class="btn btn-sm btn-danger-light btn-icon contact-delete">
+													<i class="ri-delete-bin-line"></i>
+												</button>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center fw-semibold">
+											<?php echo $item['span']; ?>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="d-flex align-items-center fw-semibold">
+											<?php echo $item['span2']; ?>
+										</div>
+									</td>
+								</tr>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>
@@ -166,7 +327,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 

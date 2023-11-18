@@ -152,7 +152,7 @@
 								  </li>
 
 								  <li class="slide">
-									  <a href="<?php echo base_url('#'); ?>" class="side-menu__item">
+									  <a href="<?php echo base_url('header_create'); ?>" class="side-menu__item">
 										  Create
 									  </a>
 								  </li>
