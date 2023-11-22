@@ -4,45 +4,39 @@
     <div class="main dflex-column justify-content-center align-items-center">
         <div class="wrapper">
             <div id="AboutUs" class="m-about-us dflex-row justify-content-center align-items-center">
-                <img class="wow animate__animated animate__fadeInLeft" src="<?php echo $directory ?>img/content/about_us/building-house.jpg" alt="About Us Image">
+				<?php foreach ($about_all_data as $item) { ?>
+                <img class="wow animate__animated animate__fadeInLeft" src="<?php echo base_url('uploads/admin/about/') . $item['img'] ?>" alt="About Us Image">
                 <div class="m-au-description wow animate__animated animate__fadeInRight">
-                    <h3 data-lang="heading_text_aboutus">About us</h3>
+                    <h3 data-lang="heading_text_aboutus"><?php echo $item['name']; ?></h3>
                     <p data-lang="aboutus_info_text">
-                        The Flash company is a reliable and cost-effective choice for any business in need of storage
-                        and transportation
-                        services in the United States. Our "A" grade warehouse operates in Delaware to store various
-                        volumes of shipments
-                        (including e-commerce). Additionally, we have our own fleet of vehicles to transport all types
-                        of loads, including
-                        large and heavy ones, within the USA. We ensure the safety of shipments and compliance with
-                        transportation
-                        requirements through our extensive network of partners and customized services. To avoid any
-                        confusion during the
-                        acceptance of shipments, we register, group, and store them on shelves according to their type
-                        and size (weight).
-                        The stored shipments are insured against possible risks. The warehouse and the surrounding area
-                        are under constant
-                        video surveillance and control.
+						<?php echo $item['desc']; ?>
                     </p>
                 </div>
+				<?php } ?>
             </div>
         </div>
         <div id="Service" class="wrapper">
             <div class="m-lending-counter dflex-row justify-content-between align-items-center wow animate__animated animate__flipInX">
                 <div class="m-l-counter-block dflex-column justify-content-between align-items-center">
                     <i class="fa-solid fa-users fa-flash-counter-type"></i>
-                    <h3 data-stats-counter="8">NaN</h3>
-                    <h3 data-lang="counter_employees">Employees</h3>
+					<?php foreach ($about_bottom1_all as $item) { ?>
+						<h3 data-stats-counter="<?php echo $item['num']; ?>">NaN</h3>
+						<h3 data-lang="counter_employees"><?php echo $item['name']; ?></h3>
+					<?php } ?>
                 </div>
                 <div class="m-l-counter-block dflex-column justify-content-between align-items-center">
                     <i class="fa-solid fa-road fa-flash-counter-type"></i>
-                    <h3 data-stats-counter="524000">NaN</h3>
-                    <h3 data-lang="counter_miles">Total miles</h3>
+					<?php foreach ($about_bottom2_all as $item) { ?>
+						<h3 data-stats-counter="<?php echo $item['num']; ?>">NaN</h3>
+						<h3 data-lang="counter_miles"><?php echo $item['name']; ?></h3>
+					<?php } ?>
                 </div>
                 <div class="m-l-counter-block dflex-column justify-content-between align-items-center">
                     <i class="fa-solid fa-user-tie fa-flash-counter-type"></i>
-                    <h3 data-stats-counter="11">NaN</h3>
-                    <h3 data-lang="counter_avg">AVG number customers</h3>
+					<?php foreach ($about_bottom3_all as $item) { ?>
+						<h3 data-stats-counter="<?php echo $item['num']; ?>">NaN</h3>
+						<h3 data-lang="counter_avg"><?php echo $item['name']; ?></h3>
+					<?php } ?>
                 </div>
             </div>
         </div>

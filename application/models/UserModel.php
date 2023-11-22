@@ -29,4 +29,24 @@ class UserModel extends CI_Model {
 		return $this->db->limit(1)->get('header_bottomr')->result_array();
 	}
 
+	public function about_all_data()
+	{
+		return $this->db->get('about_us')->result_array();
+	}
+
+	public function about_bottom1_all()
+	{
+		return $this->db->limit(1)->get('a_bottom_left')->result_array();
+	}
+
+	public function about_bottom2_all()
+	{
+		return $this->db->limit(1)->get('a_bottom_center')->result_array();
+	}
+
+	public function about_bottom3_all()
+	{
+		return $this->db->limit(1)->get('a_bottom_right')->result_array();
+	}
+
 }

@@ -59,6 +59,7 @@
 						<p data-lang="info_block_text_support"><?php echo $item['name']; ?></p>
 						<a data-lang="info_block_text_online"><?php echo $item['span']; ?></a>
 						<a data-lang="info_block_text_available"><?php echo $item['span2']; ?></a>
+
 					<?php } ?>
 				</div>
 			</div>

@@ -464,6 +464,331 @@ class AdminController extends CI_Controller {
 		redirect(base_url('header_list'));
 	}
 
+	// About
+
+	public function about_list()
+	{
+		$data['about_data'] = $this->AdminModel->get_all_about_data();
+		$data['a_bottom1'] = $this->AdminModel->get_all_a_bottom1();
+		$data['a_bottom2'] = $this->AdminModel->get_all_a_bottom2();
+		$data['a_bottom3'] = $this->AdminModel->get_all_a_bottom3();
+
+		$this->load->view("admin/about/list", $data);
+	}
+
+	public function about_create()
+	{
+		$this->load->view("admin/about/create");
+	}
+
+	public function about_create_act()
+	{
+		$name  = $_POST['name'];
+		$desc  = $_POST['desc'];
+
+		if(!empty($name) && !empty($desc)) {
+
+			$config["upload_path"]       = "./uploads/admin/about";
+			$config["allowed_types"]     = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+			$config["file_ext_tolower"]  = TRUE;
+			$config["remove_spaces"]     = TRUE;
+
+			$this->upload->initialize($config);
+			$this->load->library("upload");
+
+			if ($this->upload->do_upload("file")) {
+				$img = $this->upload->data();
+
+				$data = [
+					"name"  => $name,
+					"desc"  => $desc,
+					"img" 	=> $img["file_name"]
+				];
+
+			} else {
+
+				$data = [
+					"name"  => $name,
+					"desc"  => $desc,
+				];
+
+			}
+
+			$data = $this->security->xss_clean($data);
+			$this->AdminModel->about_cre($data);
+
+			redirect(base_url('about_list'));
+
+		} else {
+
+		}
+
+	}
+
+	public function about_view($id)
+	{
+		$data['single_data'] = $this->AdminModel->about_view_data($id);
+		$this->load->view("admin/about/view", $data);
+	}
+
+	public function about_update($id)
+	{
+		$id = $this->security->xss_clean($id);
+		$data['about_update_all'] = $this->AdminModel->about_update_all($id);
+
+		$this->load->view("admin/about/update", $data);
+	}
+
+	public function about_update_act($id)
+	{
+		$name  = $_POST['name'];
+		$desc  = $_POST['desc'];
+
+		if(!empty($name) && !empty($desc)) {
+
+			$config["upload_path"]       = "./uploads/admin/about";
+			$config["allowed_types"]     = "jpg|jpeg|png|svg|JPG|JPEG|PNG|SVG";
+			$config["file_ext_tolower"]  = TRUE;
+			$config["remove_spaces"]     = TRUE;
+
+			$this->upload->initialize($config);
+			$this->load->library("upload");
+
+			if ($this->upload->do_upload("file")) {
+				$img = $this->upload->data();
+
+				$data = [
+					"name"  => $name,
+					"desc"  => $desc,
+					"img" 	=> $img["file_name"]
+				];
+
+			} else {
+
+				$data = [
+					"name"  => $name,
+					"desc"  => $desc,
+				];
+
+			}
+
+			$id = $this->security->xss_clean($id);
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->about_upt($id, $data);
+
+			redirect(base_url('about_list'));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+
+	}
+
+	public function about_delete($id)
+	{
+		$this->AdminModel->about_del($id);
+		redirect(base_url('about_list'));
+	}
+
+	// About Bottom Left
+
+	public function about_bottom1_create()
+	{
+		$this->load->view("admin/about/bottom1_create");
+	}
+
+	public function about_bottom1_create_act()
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom1_cre($data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom1_update($id)
+	{
+		$id = $this->security->xss_clean($id);
+		$data['a_bottom1'] = $this->AdminModel->a_bottom1_upt_all($id);
+
+		$this->load->view("admin/about/bottom1_update", $data);
+	}
+
+	public function about_bottom1_update_act($id)
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$id = $this->security->xss_clean($id);
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom1_upt($id, $data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom1_delete($id)
+	{
+		$this->AdminModel->about_bottom1_del($id);
+		redirect(base_url('about_list'));
+	}
+
+	// About Bottom Center
+
+	public function about_bottom2_create()
+	{
+		$this->load->view("admin/about/bottom2_create");
+	}
+
+	public function about_bottom2_create_act()
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom2_cre($data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom2_update($id)
+	{
+		$id = $this->security->xss_clean($id);
+		$data['a_bottom2'] = $this->AdminModel->a_bottom2_upt_all($id);
+
+		$this->load->view("admin/about/bottom2_update", $data);
+	}
+
+	public function about_bottom2_update_act($id)
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$id = $this->security->xss_clean($id);
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom2_upt($id, $data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom2_delete($id)
+	{
+		$this->AdminModel->about_bottom2_del($id);
+		redirect(base_url('about_list'));
+	}
+
+	// About Bottom Right
+
+	public function about_bottom3_create()
+	{
+		$this->load->view("admin/about/bottom3_create");
+	}
+
+	public function about_bottom3_create_act()
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom3_cre($data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom3_update($id)
+	{
+		$id = $this->security->xss_clean($id);
+		$data['a_bottom3'] = $this->AdminModel->a_bottom3_upt_all($id);
+
+		$this->load->view("admin/about/bottom3_update", $data);
+	}
+
+	public function about_bottom3_update_act($id)
+	{
+		$name = $_POST['name'];
+		$num = $_POST['num'];
+
+		if (!empty($name) && !empty($num)) {
+
+			$data = [
+				"name" => $name,
+				"num" => $num,
+			];
+
+			$id = $this->security->xss_clean($id);
+			$data = $this->security->xss_clean($data);
+
+			$this->AdminModel->a_bottom3_upt($id, $data);
+			redirect(base_url("about_list"));
+
+		} else {
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+	}
+
+	public function about_bottom3_delete($id)
+	{
+		$this->AdminModel->about_bottom3_del($id);
+		redirect(base_url('about_list'));
+	}
+
 }
 
 

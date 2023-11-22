@@ -61,14 +61,23 @@
       rel="stylesheet"
       href="<?php echo base_url('public/admin') ?>/assets/libs/jsvectormap/css/jsvectormap.min.css"
     />
+
+	  <link rel="stylesheet" href="<?php echo base_url('public/admin') ?>/assets/libs/quill/quill.bubble.css">
+
+	  <link rel="stylesheet" href="<?php echo base_url('public/admin') ?>/assets/libs/quill/quill.snow.css">
+
     <link rel="stylesheet" href="<?php echo base_url('public/admin') ?>/assets/libs/swiper/swiper-bundle.min.css" />
+
     <meta http-equiv="imagetoolbar" content="no" />
+
     <style type="text/css">
       <!-- input,textarea{-webkit-touch-callout:default;-webkit-user-select:auto;-khtml-user-select:auto;-moz-user-select:text;-ms-user-select:text;user-select:text} *{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:-moz-none;-ms-user-select:none;user-select:none} -->
     </style>
+
     <style type="text/css" media="print">
       <!-- body{display:none} -->
     </style>
+
     <style id="apexcharts-css">
       @keyframes opaque {
         0% {

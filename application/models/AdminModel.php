@@ -161,4 +161,119 @@ class AdminModel extends CI_Model {
 		$this->db->where("id", $id)->delete('header_bottomr');
 	}
 
+	// About
+
+	public function get_all_about_data()
+	{
+		return $this->db->get("about_us")->result_array();
+	}
+
+	public function get_all_a_bottom1()
+	{
+		return $this->db->get("a_bottom_left")->result_array();
+	}
+
+	public function about_cre($data)
+	{
+		$this->db->insert("about_us", $data);
+	}
+
+	public function about_view_data($id)
+	{
+		return $this->db->where("id", $id)->get("about_us")->row_array();
+	}
+
+	public function about_update_all($id)
+	{
+		return $this->db->where('id', $id)->get('about_us')->row_array();
+	}
+
+	public function about_upt($id, $data)
+	{
+		$this->db->where('id', $id)->update('about_us', $data);
+	}
+
+	public function about_del($id)
+	{
+		$this->db->where("id", $id)->delete('about_us');
+	}
+
+	// About Bottom Left
+
+	public function a_bottom1_cre($data)
+	{
+		$this->db->insert("a_bottom_left", $data);
+	}
+
+	public function a_bottom1_upt_all($id)
+	{
+		return $this->db->where('id', $id)->get('a_bottom_left')->row_array();
+	}
+
+	public function a_bottom1_upt($id, $data)
+	{
+		$this->db->where('id', $id)->update('a_bottom_left', $data);
+	}
+
+	public function about_bottom1_del($id)
+	{
+		$this->db->where("id", $id)->delete('a_bottom_left');
+	}
+
+	// About Bottom Center
+
+	public function get_all_a_bottom2()
+	{
+		return $this->db->get("a_bottom_center")->result_array();
+	}
+
+	public function a_bottom2_cre($data)
+	{
+		$this->db->insert("a_bottom_center", $data);
+	}
+
+	public function a_bottom2_upt_all($id)
+	{
+		return $this->db->where('id', $id)->get('a_bottom_center')->row_array();
+	}
+
+	public function a_bottom2_upt($id, $data)
+	{
+		$this->db->where('id', $id)->update('a_bottom_center', $data);
+	}
+
+	public function about_bottom2_del($id)
+	{
+		$this->db->where("id", $id)->delete('a_bottom_center');
+	}
+
+	// About Bottom Center
+
+	public function get_all_a_bottom3()
+	{
+		return $this->db->get("a_bottom_right")->result_array();
+	}
+
+	public function a_bottom3_cre($data)
+	{
+		$this->db->insert("a_bottom_right", $data);
+	}
+
+	public function a_bottom3_upt_all($id)
+	{
+		return $this->db->where('id', $id)->get('a_bottom_right')->row_array();
+	}
+
+	public function a_bottom3_upt($id, $data)
+	{
+		$this->db->where('id', $id)->update('a_bottom_right', $data);
+	}
+
+	public function about_bottom3_del($id)
+	{
+		$this->db->where("id", $id)->delete('a_bottom_right');
+	}
+
+
 }
+
